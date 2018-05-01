@@ -26,11 +26,7 @@ Install node dependencies
     
 ### How to run it
 
-To see your project running please run:
-
-    $ npm run jekyll
-
-and in another terminal
+To see your project running run:
 
     $ npm start
 
