@@ -14,7 +14,7 @@ module.exports = {
   },
 	output: {
     filename: '[name].js',
-    path: path.join(__dirname, '../src/assets')
+    path: path.join(__dirname, '../dist/assets')
 	},
 	plugins: [
     // new webpack.ProvidePlugin({

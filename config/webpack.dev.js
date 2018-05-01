@@ -8,13 +8,21 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ETP = require('extract-text-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, '../dist'),
+    publicPath: '/assets/', // Tell the server where to serve content from
+    compress: true,
+    open: true,
+    watchContentBase: true, // Tell the server to watch the files served by the 
+    port: 9000
+  },
   module: {
     rules: [{
       // creates style nodes from JS strings
@@ -47,17 +55,17 @@ module.exports = merge(common, {
       filename: 'site.css',
       disable: false,
       allChunks: true
-    }),
-    new BrowserSyncPlugin({
-      notify: false,
-      host: '127.0.0.1',
-      port: 8100, // this is the port you develop on. Can be anything.
-      logLevel: 'info',
-      files: [
-        'src/**/*.html',
-        'src/**/*.svg'
-      ],
-      proxy: 'http://localhost:4000', // This must match Lando, WAMP, MAMP, etc.
     })
+    // new BrowserSyncPlugin({
+    //   notify: false,
+    //   host: '127.0.0.1',
+    //   port: 8100, // this is the port you develop on. Can be anything.
+    //   logLevel: 'info',
+    //   files: [
+    //     'src/**/*.html',
+    //     'src/**/*.svg'
+    //   ],
+    //   proxy: 'http://localhost:4000', // This must match Lando, WAMP, MAMP, etc.
+    // })
   ]
 });

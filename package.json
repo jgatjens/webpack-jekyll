@@ -12,16 +12,18 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "start": "npm run clean && concurrently 'npm run webpack:watch' 'npm run jekyll:dev'",
+    "start": "npm run clean && concurrently 'npm run jekyll:watch' 'npm run webpack:watch'",
     "prod": "npm run clean && npm run webpack && npm run jekyll && lite-server --baseDir='dist'",
     "webpack": "NODE_ENV=production webpack --config config/webpack.prod.js",
-    "webpack:watch": "NODE_ENV=development webpack --watch --config config/webpack.dev.js --colors",
+    "webpack:watch": "NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
     "webpack:dev": "NODE_ENV=development webpack --config config/webpack.dev.js --colors",
     "jekyll": "JEKYLL_ENV=production jekyll build --config config/_config.prod.yml",
-    "jekyll:dev": "JEKYLL_ENV=development jekyll serve --config config/_config.dev.yml --watch -H 0.0.0.0 -P 4000",
+    "jekyll:dev": "JEKYLL_ENV=development jekyll build --config config/_config.dev.yml",
+    "jekyll:watch": "nodemon -w src -e html,svg -x npm run jekyll:dev",
     "css": "node-sass --include-path ./node_modules ./scss/site.scss ./dist/site.css --source-map-embed",
-    "watch-css": "nodemon -e scss -x npm run css",
-    "style-guide": "node-sass ./scss/style-guide.scss ./dist/style-guide.css"
+    "watch-css": "nodemon -e scss  -x npm run css",
+    "style-guide": "node-sass ./scss/style-guide.scss ./dist/style-guide.css",
+    "test": "nodemon -w src -e html,svg -x echo 'hola'"
   },
   "dependencies": {
     "barba.js": "^1.0.0",
@@ -63,6 +65,7 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.11.0",
     "webpack-dashboard": "^1.0.2",
+    "webpack-dev-server": "2.9.1",
     "webpack-merge": "^4.1.2",
     "webpack-notifier": "^1.6.0"
   },
@@ -76,5 +79,6 @@
     "barba.js",
     "bulma"
   ],
-  "author": "jgatjens.com"
+  "author": "jgatjens.com",
+  "license": "ISC" 
 }

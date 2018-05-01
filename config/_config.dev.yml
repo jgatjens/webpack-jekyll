@@ -12,6 +12,9 @@ description: 'Some cool seo description'
 author: seoauthor
 url: 'http://domain.com'
 
+keep_files:
+  - assets
+
 source: src
 destination: dist
 baseurl: '' # the subpath of your site, e.g. /blog
