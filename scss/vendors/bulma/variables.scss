@@ -1,0 +1,46 @@
+
+@import './../../utils/colors';
+
+// Miscellaneous
+$easing: ease-out;
+$radius: 0;
+
+
+$body-family: $font-family;
+$body-color: $color-charcoal;
+
+// Colors
+// $primary: $color-sunshine-yellow;
+// $primary-invert:  $color-slate;
+$danger: $color-danger;
+
+// Typography
+// $family-primary: $family-sans-serif !default
+// $size-7: 0.875rem;
+
+// Forms ***
+
+// labels
+$label-color: $color-charcoal;
+$label-weight: 100;
+
+// Modals
+
+$modal-background-background-color: rgba($color-black, 0.6);
+$modal-content-spacing-mobile: $mobile-padding / 2;
+
+
+// Responsiveness
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 26px;
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+
+// $tablet: 769px;
+$tablet: 768px;
+// 960px container + 4rem
+$desktop: 960px + (2 * $gap);
+// 1152px container + 4rem
+$widescreen: 1168px + (2 * $gap);
+// 1344px container + 4rem
+$fullhd: 1220px + (2 * $gap);

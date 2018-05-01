@@ -1,0 +1,123 @@
+@import '../../utils/variables';
+@import '../../utils/colors';
+
+.bulma-select {
+  width: 100%;
+  margin-bottom: 10px;
+
+  &.is-active {
+    .button {
+      border-color: $color-saphire-blue;
+      background-color: transparent;
+    }
+    .dropdown-content {
+      border: 1px solid $color-saphire-blue;
+      border-top: none;
+    }
+
+    svg {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  .dropdown-trigger { width: 100%; }
+
+  svg {
+    width: 22px; height: 11px;
+    position: absolute;
+    margin-top: -5px;
+    right: 29px;
+    top: 50%;
+  }
+
+  .button {
+    font-family: $font-family;
+    color: $color-input;
+    font-size: em(17);
+    min-height: 70px;
+    border-color: $color-input;
+    margin-bottom: 10px;
+    box-shadow: none;
+    padding-left: 28px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: inherit;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: left;
+
+    &:focus:not(.is-danger), 
+    &.is-active:not(.is-danger) {
+      border-color: $color-saphire-blue;
+      color: $color-charcoal;
+      outline: none;
+      box-shadow: none;
+    }
+
+    &.is-danger:focus {
+      color: $color-charcoal;
+    }
+  }
+
+  .dropdown-menu { width: 100%; padding-top: 0; }
+
+  .dropdown-content {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    box-shadow: none;
+    border: 1px solid $color-saphire-blue;
+    border-top: none;
+
+    a {
+      color: $color-charcoal;
+      font-size: em(17);
+      padding-top: 22px;
+      padding-bottom: 23px;
+      padding-left: 28px;
+      white-space: normal;
+
+      &:hover, &.is-active {
+        background-color: rgba($color-saphire-blue, 0.2);
+      } 
+    }
+  }
+
+  @include desktop() {
+    .button span {
+      width: 500px;
+      overflow:hidden; 
+      white-space:nowrap; 
+      text-overflow: ellipsis;
+    }
+  }
+
+  @include tablet-only() {
+    .button span {
+      width: 350px;
+      overflow:hidden; 
+      white-space:nowrap; 
+      text-overflow: ellipsis;
+    }
+
+    .dropdown-content a {
+      padding-top: 14px;
+      padding-bottom: 16px;
+    }
+  }
+
+  @include mobile() {
+    .button span {
+      width: 200px;
+      overflow:hidden; 
+      white-space:nowrap; 
+      text-overflow: ellipsis;
+    }
+
+    .dropdown-content a {
+      padding-top: 8px;
+      padding-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// npm module
+@import 'bulma/sass/utilities/_all';
+@import 'bulma/sass/base/_all';
+@import 'bulma/sass/grid/columns';
+@import 'bulma/sass/components/dropdown';
+@import 'bulma/sass/components/modal';
+@import 'bulma/sass/elements/form';
+@import 'bulma/sass/elements/container';
+
+.container {
+  @include until($desktop) {
+    padding-left: $mobile-padding;
+    padding-right: $mobile-padding;
+  }
+}
+

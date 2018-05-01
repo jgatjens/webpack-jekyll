@@ -1,0 +1,29 @@
+// Colors
+// The primary colors for branding.
+
+$color-white           :#FFFFFF;
+$color-black           :#000000;
+$color-gray            :#F7F7F7;
+
+$color-egyptian-blue   :#1024B7; 
+$color-sunshine-yellow :#FFCD00;
+$color-peach           :#F3CFB3;
+$color-saphire-blue    :#4872DB;
+$color-midnight-blue   :#001E62;
+$color-cloud           :#D9D9D6;
+$color-charcoal        :#2E3230;
+$color-danger          :#D0021B;
+
+$color-input           :#9B9B9B;
+
+.color-white           { color :$color-white         !important }
+
+.color-egyptian-blue   { color: $color-egyptian-blue  }
+.color-sunshine-yellow { color: $color-sunshine-yellow}
+.color-peach           { color: $color-peach          }
+.color-saphire-blue    { color: $color-saphire-blue   }
+.color-midnight-blue   { color: $color-midnight-blue  }
+.color-cloud           { color: $color-cloud          }
+.color-charcoal        { color: $color-charcoal       }
+.color-input           { color: $color-input          }
+.color-danger          { color: $color-danger         }

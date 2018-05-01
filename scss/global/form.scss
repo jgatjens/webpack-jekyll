@@ -1,0 +1,23 @@
+.label {
+  &.is-danger { color: $color-danger; }
+}
+
+.label {}
+
+.input, select, .textarea {
+  
+
+  @include placeholder {
+    color: $color-input;
+  }
+  
+  &:focus:not(.is-danger),
+  &.is-active:not(.is-danger) {
+  
+  }
+
+  &.is-danger:focus {
+
+  }
+
+}

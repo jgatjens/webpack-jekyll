@@ -1,0 +1,62 @@
+@import "bulma/sass/utilities/mixins";
+/* Typography */
+
+h1, h2, h3, h4 h5 {
+  font-family: $font-family;
+}
+
+h1, .h1 {
+  font-size: em(42);
+  line-height: em(48);
+  color: $color-midnight-blue;
+  @include tablet() {
+    font-size: em(60);
+    line-height: em(68);
+  }
+}
+
+h2, .h2 {
+  font-size: em(22);
+  line-height: em(26);
+  color: $color-midnight-blue;
+  @include tablet() {
+    font-size: em(40);
+    line-height: em(53);
+  }
+}
+
+h3 {
+  font-size: em(16);
+  line-height: em(24);
+  color: $color-charcoal;
+  // font-family: $font-family-bold;
+  @include tablet() {
+    font-size: em(26);
+    line-height: em(32);
+  }
+}
+
+h4 {
+  font-size: em(16);
+  line-height: em(24);
+
+  color: $color-charcoal;
+  // font-family: $font-family-bold;
+  @include tablet() {
+    font-size: em(20);
+    line-height: em(22);
+  }
+}
+
+p {
+  font-size: em(16);
+  line-height: em(24);
+  
+  @include tablet() {
+    font-size: em(17);
+    line-height: em(26);
+  }
+}
+.small{
+  font-size: em(12);
+}

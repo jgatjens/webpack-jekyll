@@ -1,0 +1,44 @@
+.bulma-modal {
+
+  .h1, p {
+    color: $color-white;
+  }
+
+  .h1 {
+    padding-bottom: 15px;
+    @include tablet() {
+      padding-bottom: 20px;
+    }
+  }
+
+  .modal-content {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  @include mobile {
+    .modal-content > .container {
+      padding-left: $mobile-padding / 2;
+      padding-right: $mobile-padding / 2;
+    }
+  }
+}
+
+.modal-close {
+  position: absolute; 
+  right: 0; top: 5px;
+  z-index: 5;
+  &.is-large {
+    height: 52px;
+    max-height: 52px;
+    max-width: 52px;
+    min-height: 52px;
+    min-width: 52px;
+    width: 52px;
+  }
+
+  &:hover, &:focus {
+    background-color: transparent;
+  }
+}

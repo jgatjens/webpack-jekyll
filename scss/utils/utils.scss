@@ -1,0 +1,38 @@
+﻿@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+/* 
+    Typography related functions
+*/
+
+@function em($pxtargetsize, $pxbaseunit: 16){
+  @return #{$pxtargetsize/$pxbaseunit}rem;
+}
+
+
+@mixin close-overlay {
+  .navbar-burger {
+    margin: 0;
+    position: absolute;
+    top: $mobile-padding + 12px;
+    right: $mobile-padding + 9px; 
+    width: 30px;
+    height: 30px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      width: 46px;
+      height: 46px;
+      background-color: $color-slate;
+      display: inline-block;
+    }
+  }
+}

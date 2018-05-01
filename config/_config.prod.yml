@@ -1,0 +1,41 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: 'seo title'
+email: jgatjens@gmail.com
+description: 'Some cool seo description'
+author: jgatjens
+url: 'http://jgatjens.com'
+
+twitter:
+  username: jgatjens
+facebook:
+ app_id: 1234
+ publisher: 1234
+ admins: 1234
+
+social:
+  name: Seo social
+  links:
+    - https://twitter.com/jgatjens
+    - https://www.facebook.com/jgatjens
+    - https://www.linkedin.com/in/jgatjens
+    - https://plus.google.com/+jgatjens
+    - https://github.com/jgatjens
+
+source: src
+destination: dist
+baseurl: '' # the subpath of your site, e.g. /blog
+
+# Build settings
+markdown: kramdown
+
+# Build settings
+gems:
+  - jekyll-seo-tag
+  - octopress-minify-html

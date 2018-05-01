@@ -1,0 +1,34 @@
+.navbar-burger {
+  background-color: $color-saphire-blue;
+  color: $color-white;
+  
+  @include hamburger(65px);
+
+  span {
+    width: 30px;
+    left: calc(50% - 15px);
+
+    &:nth-child(1) { top: calc(50% - 11px); }
+    &:nth-child(2) { top: calc(50% - 0px);  }
+    &:nth-child(3) { top: calc(50% + 11px);  }  
+  }
+
+  // reset first line
+  &.is-active  {
+    span:nth-child(1) { top: calc(50% - 4px); }
+    span:nth-child(3) { top: calc(50% + 6px); }
+    span { height: 2px; }
+  }
+
+  &:hover {
+    background-color: $color-saphire-blue;
+  }
+
+  @include until($tablet) {
+    display: block;
+  } 
+
+  @include desktop() {
+    display: none;
+  }
+}
