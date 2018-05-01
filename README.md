@@ -33,5 +33,5 @@ To see your project running run:
 
 ### Production builds
     
-    $ npm run prod # check build in litle-server
+    $ npm run prod # check build on litle-server
     $ zip -r dist.zip dist && rm -Rf dist
