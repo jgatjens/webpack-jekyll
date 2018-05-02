@@ -16,7 +16,7 @@
 Install Ruby Gems:
 
     $ gem install bundler
-    $ cd ./jekyll && bundler install 
+    $ bundler install 
         
 Install node dependencies
 

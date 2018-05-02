@@ -6,4 +6,5 @@ dist
 dist.zip
 src/assets/app.js
 src/assets/site.css
+Gemfile.lock
 
