@@ -13,7 +13,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "start": "npm run clean && concurrently 'npm run jekyll:watch' 'npm run webpack:watch'",
-    "prod": "npm run clean && npm run webpack && npm run jekyll && lite-server --baseDir='dist'",
+    "prod": "npm run clean && npm run webpack && npm run jekyll",
     "webpack": "NODE_ENV=production webpack --config config/webpack.prod.js",
     "webpack:watch": "NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
     "webpack:dev": "NODE_ENV=development webpack --config config/webpack.dev.js --colors",
@@ -23,7 +23,7 @@
     "css": "node-sass --include-path ./node_modules ./scss/site.scss ./dist/site.css --source-map-embed",
     "watch-css": "nodemon -e scss  -x npm run css",
     "style-guide": "node-sass ./scss/style-guide.scss ./dist/style-guide.css",
-    "test": "nodemon -w src -e html,svg -x echo 'hola'"
+    "server": "lite-server --baseDir='dist'"
   },
   "dependencies": {
     "barba.js": "^1.0.0",
