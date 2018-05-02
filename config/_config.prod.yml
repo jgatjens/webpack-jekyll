@@ -28,6 +28,9 @@ social:
     - https://plus.google.com/+jgatjens
     - https://github.com/jgatjens
 
+keep_files:
+  - assets
+
 source: src
 destination: dist
 baseurl: '' # the subpath of your site, e.g. /blog
