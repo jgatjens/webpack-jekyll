@@ -12,6 +12,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = merge(common, {
+  mode: 'production',
   module: {
     rules: [
       {
@@ -22,7 +23,6 @@ module.exports = merge(common, {
           fallback: 'style-loader',
           use: [
             // loaders will pipe content through from the bottom to the top
-            // i.e. css-loader(postcss-loader(sass-loader()))
             { 
               loader: 'css-loader', 
               options: { 

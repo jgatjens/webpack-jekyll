@@ -8,12 +8,12 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ETP = require('extract-text-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = merge(common, {
+  mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, '../dist'),
@@ -56,16 +56,5 @@ module.exports = merge(common, {
       disable: false,
       allChunks: true
     })
-    // new BrowserSyncPlugin({
-    //   notify: false,
-    //   host: '127.0.0.1',
-    //   port: 8100, // this is the port you develop on. Can be anything.
-    //   logLevel: 'info',
-    //   files: [
-    //     'src/**/*.html',
-    //     'src/**/*.svg'
-    //   ],
-    //   proxy: 'http://localhost:4000', // This must match Lando, WAMP, MAMP, etc.
-    // })
   ]
 });

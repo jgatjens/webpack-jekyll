@@ -13,17 +13,10 @@ module.exports = {
     app: path.join(__dirname, '../js/app.js')
   },
 	output: {
-    filename: '[name].js',
+    filename: '[name].bundle.js',
     path: path.join(__dirname, '../dist/assets')
 	},
-	plugins: [
-    // new webpack.ProvidePlugin({
-    //   $: 'jquery',
-    //   jQuery: 'jquery',
-    //   'window.jQuery': 'jquery'
-    // }),
-		// new CleanWebpackPlugin('dist')
-	],
+	plugins: [],
 	module: {
     rules: [
       {
@@ -33,15 +26,14 @@ module.exports = {
         include: path.join(__dirname, '../js'),
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: [
-              require('@babel/plugin-proposal-object-rest-spread').default,
-              require('@babel/plugin-transform-block-scoping').default,
-              require('@babel/plugin-transform-classes').default
-            ]
-          }
         }
+      },
+
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [{
+          loader: 'file-loader'
+        }]
       },
 
       {
@@ -49,8 +41,8 @@ module.exports = {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
         exclude: /node_modules/,
         use: [
-          { loader: 'url-loader', options: { limit: 8192 } },
-        ]
+          { loader: 'url-loader', options: { limit: 8192 } 
+        }]
       }
     ]
   }
